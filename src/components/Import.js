@@ -72,16 +72,12 @@ const Import = (props) => {
 										{/* <MenuItem key="1" >
 											delete
 										</MenuItem> */}
-										{options.map((option) => (
-											<MenuItem
-												key={option}
-												selected={option === "Delete"}
-												onClick={() => props.deleteMake(index)} //(index)
-											>
-												{console.log(index)}
-												{option}
-											</MenuItem>
-										))}
+
+										<MenuItem
+											onClick={() => props.deleteMake(index)} //(index)
+										>
+											Delete
+										</MenuItem>
 									</Menu>
 								</TableCell>
 							</TableRow>
