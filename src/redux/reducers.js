@@ -22,6 +22,7 @@ const makes = (state = [], action) => {
 		case "DELETE_MAKE":
 			const makes = [...state];
 			makes.splice(action.value, 1);
+			console.log("this is action value" + action.value);
 			return makes;
 		default:
 			return state;
@@ -29,3 +30,4 @@ const makes = (state = [], action) => {
 };
 
 export default combineReducers({ user, cars, makes });
+//

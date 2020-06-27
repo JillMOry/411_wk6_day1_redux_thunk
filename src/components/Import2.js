@@ -1,5 +1,4 @@
 import React from "react";
-import VertMore from "./VertMore";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import IconButton from "@material-ui/core/IconButton";
@@ -45,7 +44,38 @@ const Import = (props) => {
 								<TableCell align="right">{make.MakeId}</TableCell>
 								<TableCell align="right">{make.MakeName}</TableCell>
 								<TableCell align="right">
-									<VertMore deleteMake={props.deleteMake} index={index} />
+									<IconButton
+										aria-label="more"
+										aria-controls="long-menu"
+										aria-haspopup="true"
+										onClick={handleClick}
+									>
+										<MoreVertIcon />
+									</IconButton>
+									<Menu
+										id="long-menu"
+										anchorEl={anchorEl}
+										keepMounted
+										open={open}
+										onClose={handleClose}
+										PaperProps={{
+											style: {
+												maxHeight: ITEM_HEIGHT * 4.5,
+												width: 200
+											}
+										}}
+									>
+										{/* <MenuItem key="1" >
+											delete
+										</MenuItem> */}
+
+										<MenuItem
+											key="1"
+											onClick={() => props.deleteMake(index)} //(index)
+										>
+											Delete
+										</MenuItem>
+									</Menu>
 								</TableCell>
 							</TableRow>
 						);

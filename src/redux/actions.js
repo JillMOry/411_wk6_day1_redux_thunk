@@ -35,3 +35,5 @@ export const deleteMake = (index) => {
 		value: index
 	};
 };
+
+//
